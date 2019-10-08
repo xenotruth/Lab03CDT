@@ -1,0 +1,4 @@
+step 1: get onto their PC through ssh, transfer over these two files
+step 2: run ./notify.sh PATH-TO-FILE ACCOUNT-ID IP NUMBER
+step 3: make sure to check if they give you root password
+step 4: you are done.

